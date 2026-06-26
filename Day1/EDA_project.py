@@ -46,3 +46,24 @@ plt.title("Distribution of Spending")
 plt.xlabel('Spending Amount')
 plt.ylabel('Number of Customers')
 plt.show()
+
+correlation=df.corr(numeric_only=True)
+print(correlation)
+
+print("plotting Correlation Heat")
+plt.figure(figsize=(7,4))
+sns.heatmap(correlation,annot=True,cmap='coolwarm',fmt='.2f')
+plt.title("Correlation Heatmap")
+plt.show()
+
+plt.figure(figsize=(7,4))
+plt.scatter(df['Age'],df['Spending'],color='red',alpha=0.5)
+plt.title('Age vs Spending')
+plt.xlabel('Age')
+plt.ylabel('spending')
+plt.show()
+
+
+print("Find the outliers in age")
+outliers=(df['Age']>100)
+print(outliers)
