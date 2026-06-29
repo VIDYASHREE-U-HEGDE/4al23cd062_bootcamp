@@ -78,6 +78,13 @@ def main():
 
     print(f"trainning Data Size:{X_train.shape}")
     print(f"Testing Data Size:{X_test.shape}\n")
+
+    # training model
+    model=LinearRegression()
+    model.fit(X_train,y_train)
+
+    predictions=model.predict(X_test)
+    print(predictions)
     
 if __name__ == "__main__":
     main()
